@@ -15,21 +15,21 @@ function App() {
   const [isOpen, setIsOpen] = useState(true);
   function handlePrevious(){
     if ( steps > 1 )
-    setStep(steps - 1)  
+    setStep( s=>s-1)  
   }
   function handleNext(){
     if( steps < 3)
-    setStep(steps + 1)
+    setStep(s=>s+1)
   }
 
   return (
     <>
-    <button className='close' onClick={()=>setIsOpen(!isOpen)}>&times;</button>
+    <button className='close' onClick={()=>setIsOpen(i => !i)}>&times;</button>
     {isOpen && (
 
     <div className='steps'>
       <div className='numbers'>
-        <div className={`${steps >=1 ? 'active': "unactive"}`}>1</div>
+        <div className={`${steps >=1 ? 'active': ""}`}>1</div>
         <div className={`${steps >=2 ? 'active': ""}`}>2</div>
         <div className={`${steps >=3 ? 'active': ""}`}>3</div>
       </div>
